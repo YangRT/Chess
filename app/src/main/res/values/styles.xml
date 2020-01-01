@@ -9,7 +9,6 @@
     </style>
     <declare-styleable name="ChessView">
         <attr name="lineColor" format="color"/>
-        <attr name="length" format="integer"/>
         <attr name="user_color_one" format="color"/>
         <attr name="user_color_two" format="color"/>
     </declare-styleable>

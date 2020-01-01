@@ -74,7 +74,6 @@ public class ChessView extends View implements View.OnTouchListener {
 
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ChessView);
-        length = typedArray.getInteger(R.styleable.ChessView_length,displayMetrics.widthPixels/3);
         lineColor = typedArray.getColor(R.styleable.ChessView_lineColor,Color.BLACK);
         userColorOne = typedArray.getColor(R.styleable.ChessView_user_color_one,Color.BLACK);
         userColorTwo = typedArray.getColor(R.styleable.ChessView_user_color_two,Color.RED);
@@ -114,13 +113,13 @@ public class ChessView extends View implements View.OnTouchListener {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //根据设置格子长度 赋值宽高
-        setMeasuredDimension((int)(3*length),(int)(3*length));
+        int size = Math.min(MeasureSpec.getSize(widthMeasureSpec),MeasureSpec.getSize(heightMeasureSpec));
+        setMeasuredDimension(size,size);
     }
-
 
     @Override
     protected void onDraw(Canvas canvas) {
+        length = Math.min(getWidth(),getHeight())/3;
         //棋盘绘制
         for(int i = 0;i < 4;i++){
             canvas.drawLine(length*i,0,length*i,3*length,mPaint);
