@@ -3,4 +3,4 @@
 
 demo:
 
-![image](https://github.com/YangRT/Chess/tree/master/app/src/main/java/com/example/chess/demo/chess.gif)
+![image](https://github.com/YangRT/Chess/blob/master/app/src/main/java/com/example/chess/demo/chess.gif)
